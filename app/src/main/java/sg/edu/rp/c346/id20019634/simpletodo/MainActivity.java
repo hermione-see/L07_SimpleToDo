@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -84,9 +85,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int index = Integer.parseInt(etTask.getText().toString());
-                alTasks.remove(index);
-                aaTasks.notifyDataSetChanged();
+                if (alTasks.isEmpty() == true) {
+
+                    Toast.makeText(MainActivity.this,"You don't have any task to remove.", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    int index = Integer.parseInt(etTask.getText().toString());
+
+                    if (index >= alTasks.size()) {
+
+                        Toast.makeText(MainActivity.this,"Wrong index number.", Toast.LENGTH_SHORT).show();
+
+                    } else {
+
+                        alTasks.remove(index);
+                        aaTasks.notifyDataSetChanged();
+
+                    }
+
+                }
+
 
             }
         });
