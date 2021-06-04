@@ -45,18 +45,14 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        btnDelete.setClickable(false);
-                        btnAdd.setClickable(true);
-                        btnDelete.setTextColor(Color.parseColor("grey"));
-                        btnAdd.setTextColor(Color.parseColor("white"));
+                        btnDelete.setEnabled(false);
+                        btnAdd.setEnabled(true);
                         etTask.setHint("Type in a new task here");
                         break;
 
                     case 1:
-                        btnAdd.setClickable(false);
-                        btnDelete.setClickable(true);
-                        btnAdd.setTextColor(Color.parseColor("grey"));
-                        btnDelete.setTextColor(Color.parseColor("white"));
+                        btnAdd.setEnabled(false);
+                        btnDelete.setEnabled(true);
                         etTask.setHint("Type in the index of the task to be removed");
                         break;
 
